@@ -1,6 +1,4 @@
-import Button from '@mui/material/Button';
 import { CssBaseline } from '@mui/material';
-import * as React from 'react';
 import Box from '@mui/material/Box';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -10,9 +8,15 @@ import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
 import InboxIcon from '@mui/icons-material/Inbox';
 import DraftsIcon from '@mui/icons-material/Drafts';
+import Button from '@mui/material/Button';
 
 
 export function BasicList() {
+  let value=1;
+  function incrementValue(){
+    console.log("Function", value)
+    value++;
+  }
 
   return (
     <>
@@ -20,6 +24,7 @@ export function BasicList() {
       
       <Box sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
       <nav aria-label="main mailbox folders">
+        <p>{value}</p>
         <List>
           <ListItem disablePadding>
             <ListItemButton>
@@ -55,9 +60,23 @@ export function BasicList() {
         </List>
       </nav>
     </Box>
+    <Button onClick={incrementValue}>Increment</Button>
 
     </>
   )
 }
 
 // export default App
+
+
+
+
+
+
+
+
+
+
+
+
+
